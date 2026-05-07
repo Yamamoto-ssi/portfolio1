@@ -5,7 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
@@ -55,15 +62,58 @@ header {
 
 /* Main content */
 main {
+    flex: 1;
     margin-top: 80px; /* Account for fixed header */
 }
 
 /* Hero section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 100px 20px;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('images/hero-bg.png') no-repeat center center;
+    background-size: cover;
+    
+
+    background-attachment: fixed; 
+    min-height: 80vh;           
+    display: flex;               
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;             
     text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 50px;
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+    padding: 50px;
+}
+
+.hero-content-text {
+    max-width: 600px;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px 17px #7a7676;
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content h2 {
@@ -91,6 +141,13 @@ main {
 
 .cta-button:hover {
     background-color: #2980b9;
+}
+
+.gallery {
+    background-color: #000000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 /* Featured section */
@@ -641,7 +698,6 @@ footer {
     opacity: 0.9;
 }
 
-/* Hobbies page styles */
 .hobbies-intro {
     text-align: center;
     margin-bottom: 40px;
@@ -656,7 +712,7 @@ footer {
 }
 
 .hobby-card {
-    background-color: white;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -676,11 +732,11 @@ footer {
 .hobby-card h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #ffffff;
 }
 
 .hobby-card p {
-    color: #666;
+    color: #ffffff;
     line-height: 1.6;
 }
 
